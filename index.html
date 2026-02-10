@@ -4,455 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RME Empreiteira - Especialistas em construção civil e reformas de alto padrão em Balneário Camboriú e litoral de SC. Estrutura sólida e acabamento fino.">
-    <meta name="keywords" content="Empreiteira Balneário Camboriú, Reforma Alto Padrão, Construção Civil SC, Estruturas Metálicas, Acabamento Fino">
     <title>RME Empreiteira | Engenharia e Alto Padrão</title>
     
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1785/1785327.png" type="image/png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* --- Variáveis de Cor --- */
-        :root {
-            --cor-primaria: #0A2463; /* Azul Marinho Profundo */
-            --cor-destaque: #CD7F32; /* Bronze/Cobre */
-            --cor-destaque-hover: #b06a25;
-            --cor-fundo-claro: #F5F5F5;
-            --cor-texto: #333333;
-            --cor-branco: #FFFFFF;
-        }
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        /* --- Reset e Estilos Gerais --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--cor-texto);
-            line-height: 1.6;
-            background-color: var(--cor-branco);
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--cor-primaria);
-            margin-bottom: 1rem;
-        }
-
-        a {
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* --- Botões --- */
-        .btn {
-            display: inline-block;
-            background-color: var(--cor-destaque);
-            color: var(--cor-branco);
-            padding: 15px 30px;
-            font-weight: 600;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            border: 2px solid var(--cor-destaque);
-        }
-
-        .btn:hover {
-            background-color: var(--cor-destaque-hover);
-            border-color: var(--cor-destaque-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--cor-branco);
-            border: 2px solid var(--cor-branco);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--cor-branco);
-            color: var(--cor-primaria);
-        }
-
-        /* --- Container --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        /* --- Header / Nav --- */
-        header {
-            background-color: var(--cor-primaria);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--cor-branco);
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: var(--cor-destaque);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        nav ul li a:hover {
-            color: var(--cor-destaque);
-        }
-
-        /* Menu Mobile Toggle (Simples) */
-        .mobile-menu-icon {
-            display: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* --- Hero Section --- */
-        #hero {
-            height: 100vh;
-            background: linear-gradient(rgba(10, 36, 99, 0.7), rgba(10, 36, 99, 0.5)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--cor-branco);
-            padding-top: 80px; /* Compensa o header fixo */
-        }
-
-        #hero h1 {
-            color: var(--cor-branco);
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        #hero h2 {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.2rem;
-            font-weight: 400;
-            font-family: 'Open Sans', sans-serif;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
-
-        /* --- Sobre Nós --- */
-        #sobre {
-            background-color: var(--cor-branco);
-        }
-
-        .sobre-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .sobre-text h3 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--cor-destaque);
-            margin-bottom: 10px;
-        }
-
-        .sobre-text h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 25px;
-        }
-
-        .sobre-img img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        /* --- Serviços --- */
-        #servicos {
-            background-color: var(--cor-fundo-claro);
-            text-align: center;
-        }
-
-        .section-header {
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--cor-branco);
-            padding: 40px 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            text-align: left;
-            border-bottom: 3px solid transparent;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-bottom: 3px solid var(--cor-destaque);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--cor-destaque);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            color: var(--cor-primaria);
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* --- Diferenciais --- */
-        #diferenciais {
-            background-color: var(--cor-primaria);
-            color: var(--cor-branco);
-        }
-
-        #diferenciais h2 {
-            color: var(--cor-branco);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .diferenciais-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .diferencial-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .diferencial-item i {
-            color: var(--cor-destaque);
-            font-size: 1.5rem;
-            margin-top: 5px;
-        }
-
-        .diferencial-item h4 {
-            color: var(--cor-branco);
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .diferencial-item p {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-        }
-
-        /* --- Galeria --- */
-        #galeria {
-            text-align: center;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            height: 250px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #05163d; /* Um tom mais escuro que a cor primária */
-            color: var(--cor-branco);
-            padding: 60px 0 20px 0;
-            text-align: center;
-        }
-
-        .footer-cta {
-            margin-bottom: 50px;
-            padding-bottom: 50px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-cta h2 {
-            color: var(--cor-branco);
-            margin-bottom: 20px;
-        }
-
-        .footer-info p {
-            margin-bottom: 10px;
-            color: rgba(255,255,255,0.7);
-        }
-
-        .footer-info i {
-            color: var(--cor-destaque);
-            margin-right: 10px;
-            width: 20px;
-        }
-
-        .copyright {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-        }
-
-        /* --- Botão Flutuante WhatsApp --- */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-        }
-
-        /* --- Responsividade (Mobile) --- */
-        @media (max-width: 768px) {
-            #hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .nav-container ul {
-                display: none; /* Esconder menu no mobile para simplificar */
-            }
-
-            .sobre-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .sobre-img {
-                order: -1; /* Imagem acima do texto no mobile */
-                margin-bottom: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="container nav-container">
             <div class="logo">RME <span>EMPREITEIRA</span></div>
-            <nav>
+            
+            <div class="hamburger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="close-menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
                 <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#diferenciais">Diferenciais</a></li>
-                    <li><a href="#galeria">Obras</a></li>
-                    <li><a href="#contato" class="btn btn-outline" style="padding: 8px 20px; border-color: var(--cor-destaque); color: var(--cor-destaque);">Contato</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+                    <li><a href="#galeria" class="nav-link">Obras</a></li>
+                    <li><a href="#contato" class="btn btn-outline nav-link-btn">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section id="hero">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
             <h1>Da Estrutura Sólida ao<br>Acabamento de Alto Padrão</h1>
             <h2>A RME Empreiteira transforma seu projeto em realidade com equipe própria, rigor técnico e execução impecável. Especialistas em construção civil e reformas em SC.</h2>
-            <a href="https://wa.me/5547984800255?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20minha%20obra." target="_blank" class="btn">Solicitar Orçamento no WhatsApp</a>
+            <a href="https://wa.me/5547984800255?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20minha%20obra." target="_blank" class="btn btn-pulse">Solicitar Orçamento no WhatsApp</a>
         </div>
     </section>
 
     <section id="sobre">
         <div class="container sobre-content">
-            <div class="sobre-text">
+            <div class="sobre-text" data-aos="fade-right">
                 <h3>A Empresa</h3>
                 <h2>Construindo confiança,<br>metro a metro.</h2>
                 <p>Mais do que levantar paredes, a RME Empreiteira é sinônimo de tranquilidade na sua obra. Nascemos da fusão entre a expertise técnica em estruturas metálicas e a exigência por acabamentos finos.</p>
                 <br>
                 <p>Atuamos com mão de obra 100% própria, o que garante controle total do cronograma, limpeza no canteiro de obras e fidelidade ao projeto arquitetônico. Seja para construir do zero ou reformar, sua obra merece esse nível de profissionalismo.</p>
             </div>
-            <div class="sobre-img">
+            <div class="sobre-img" data-aos="fade-left">
                 <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2031&auto=format&fit=crop" alt="Equipe RME em obra">
             </div>
         </div>
@@ -460,27 +68,27 @@
 
     <section id="servicos">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>O que fazemos</h2>
                 <p>Soluções completas da fundação à entrega das chaves.</p>
             </div>
             <div class="cards-grid">
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fa-solid fa-helmet-safety"></i>
                     <h3>Engenharia Estrutural</h3>
                     <p>Execução de fundações, sapatas, corte e dobra de ferragens e concretagem. Garantimos a base sólida e segura que seu imóvel exige.</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fa-solid fa-trowel-bricks"></i>
                     <h3>Alvenaria & Civil</h3>
                     <p>Levantamento de paredes, reboco e contrapiso com esquadro e prumo perfeitos, preparando o ambiente para receber os materiais nobres.</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fa-solid fa-layer-group"></i>
                     <h3>Pisos & Revestimentos</h3>
                     <p>Assentamento técnico de porcelanatos grandes formatos, mármores e granitos. Nivelamento a laser e acabamento de juntas finas.</p>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="400">
                     <i class="fa-solid fa-paint-roller"></i>
                     <h3>Pintura Premium</h3>
                     <p>O toque final de excelência. Pintura lisa, texturas, gesso e instalação de louças e metais. Entregamos sua obra pronta para morar.</p>
@@ -491,30 +99,30 @@
 
     <section id="diferenciais">
         <div class="container">
-            <h2>Por que escolher a RME?</h2>
+            <h2 data-aos="fade-down">Por que escolher a RME?</h2>
             <div class="diferenciais-grid">
-                <div class="diferencial-item">
+                <div class="diferencial-item" data-aos="zoom-in" data-aos-delay="100">
                     <i class="fa-solid fa-check-circle"></i>
                     <div>
                         <h4>Equipe Própria</h4>
                         <p>Sem terceirização desnecessária. Nossa equipe veste a camisa da sua obra.</p>
                     </div>
                 </div>
-                <div class="diferencial-item">
+                <div class="diferencial-item" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fa-solid fa-broom"></i>
                     <div>
                         <h4>Obra Limpa</h4>
                         <p>Organização e limpeza diária do canteiro de obras.</p>
                     </div>
                 </div>
-                <div class="diferencial-item">
+                <div class="diferencial-item" data-aos="zoom-in" data-aos-delay="300">
                     <i class="fa-solid fa-shapes"></i>
                     <div>
                         <h4>Especialistas em Aço</h4>
                         <p>Know-how diferenciado em armações e reforços estruturais.</p>
                     </div>
                 </div>
-                <div class="diferencial-item">
+                <div class="diferencial-item" data-aos="zoom-in" data-aos-delay="400">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <div>
                         <h4>Acabamento Detalhista</h4>
@@ -527,32 +135,32 @@
 
     <section id="galeria">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <h2>Nossas Obras</h2>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Obra 1"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Obra 2"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Obra 3"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Obra 1"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Obra 2"></div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Obra 3"></div>
             </div>
         </div>
     </section>
 
     <footer id="contato">
         <div class="container">
-            <div class="footer-cta">
+            <div class="footer-cta" data-aos="zoom-in">
                 <h2>Pronto para iniciar sua obra sem dor de cabeça?</h2>
-                <a href="https://wa.me/5547984800255?text=Olá,%20vim%20pelo%20site%20e%20quero%20um%20orçamento." target="_blank" class="btn">Fale com nossa equipe agora</a>
+                <a href="https://wa.me/5547984800255?text=Olá,%20vim%20pelo%20site%20e%20quero%20um%20orçamento." target="_blank" class="btn btn-pulse">Fale com nossa equipe agora</a>
             </div>
             
-            <div class="footer-info">
+            <div class="footer-info" data-aos="fade-up">
                 <p><i class="fa-brands fa-whatsapp"></i> (47) 98480-0255</p>
                 <p><i class="fa-brands fa-instagram"></i> @rme.empreiteira</p>
                 <p><i class="fa-solid fa-location-dot"></i> Atendemos Balneário Camboriú, Itajaí e Região.</p>
             </div>
 
             <div class="copyright">
-                <p>&copy; 2026 RME Empreiteira. Todos os direitos reservados.</p>
+                <p>&copy; 2024 RME Empreiteira. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -560,6 +168,13 @@
     <a href="https://wa.me/5547984800255?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20uma%20obra." class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+
+    <button id="backToTop" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
