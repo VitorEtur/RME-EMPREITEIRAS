@@ -37,7 +37,7 @@
                     <li><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
                     <li><a href="#galeria" class="nav-link">Obras</a></li>
-                    <li><a href="#contato" class="btn btn-outline nav-link-btn">Contato</a></li>
+                    <li><a href="#contato" class="btn btn-outline nav-link-btn nav-link">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -137,11 +137,25 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <h2>Nossas Obras</h2>
+                <p>Clique nas imagens para ampliar</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Obra 1"></div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Obra 2"></div>
-                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Obra 3"></div>
+                
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Obra 1" class="gallery-img">
+                    <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Obra 2" class="gallery-img">
+                    <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Obra 3" class="gallery-img">
+                    <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -154,13 +168,13 @@
             </div>
             
             <div class="footer-info" data-aos="fade-up">
-                <p><i class="fa-brands fa-whatsapp"></i> (47) 98480-0255</p>
-                <p><i class="fa-brands fa-instagram"></i> @rme.empreiteira</p>
+                <p><a href="https://wa.me/5547984800255" target="_blank" class="footer-link"><i class="fa-brands fa-whatsapp"></i> (47) 98480-0255</a></p>
+                <p><a href="https://instagram.com/rme.empreiteira" target="_blank" class="footer-link"><i class="fa-brands fa-instagram"></i> @rme.empreiteira</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> Atendemos Balneário Camboriú, Itajaí e Região.</p>
             </div>
 
             <div class="copyright">
-                <p>&copy; 2024 RME Empreiteira. Todos os direitos reservados.</p>
+                <p>&copy; 2026 RME Empreiteira. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -172,6 +186,14 @@
     <button id="backToTop" title="Voltar ao topo">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img01">
+        
+        <a class="prev-slide" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next-slide" onclick="changeSlide(1)">&#10095;</a>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
