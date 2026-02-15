@@ -49,8 +49,32 @@ header { background-color: var(--cor-primaria); height: var(--header-height); di
 header.scrolled { height: 70px; --header-height: 70px; }
 
 .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.logo { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--cor-branco); letter-spacing: 2px; }
-.logo span { color: var(--cor-destaque); }
+
+/* --- Logo (Configuração de Tamanho e Clique) --- */
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Garante que pareça clicável */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Um leve zoom ao passar o mouse para dar vida */
+}
+
+/* Tamanho Padrão (Mobile e Tablets) */
+.logo img {
+    height: 45px; /* Tamanho bom para celular */
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Ajuste Específico para DESKTOP (Telas grandes) --- */
+@media (min-width: 992px) {
+    .logo img {
+        height: 60px; /* AUMENTADO: Mais presença no Desktop */
+    }
+}
 
 .nav-menu ul { display: flex; align-items: center; gap: 30px; }
 .nav-menu ul li a.nav-link { color: rgba(255,255,255,0.9); font-size: 1rem; font-weight: 600; text-transform: uppercase; position: relative; }
