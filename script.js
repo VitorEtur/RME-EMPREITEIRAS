@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para abrir o modal na imagem clicada
     galleryItems.forEach((img, index) => {
         img.parentElement.addEventListener('click', () => {
-            modal.style.display = "block";
+            modal.style.display = "flex";
             modalImg.src = img.src;
             currentIndex = index;
         });
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navegação por teclado (Seta esquerda, direita e ESC)
     document.addEventListener('keydown', function(event) {
-        if (modal.style.display === "block") {
+        if (modal.style.display === "flex") {
             if (event.key === "ArrowLeft") {
                 changeSlide(-1);
             } else if (event.key === "ArrowRight") {
