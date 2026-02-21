@@ -506,12 +506,16 @@ footer {
   margin-bottom: 30px;
   font-size: 2.2rem;
 }
+/* --- Ajuste no Footer Info --- */
 .footer-info p {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin-bottom: 20px; /* Aumentado levemente para dar mais respiro */
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* NOVO: Garante o espaço entre o ícone e o texto no desktop */
+    flex-wrap: wrap; /* NOVO: Permite que o texto quebre de linha no celular se não couber */
+    padding: 0 15px; /* NOVO: Evita que o texto encoste nas bordas do celular */
 }
 .footer-link {
   color: rgba(255, 255, 255, 0.8);
@@ -524,8 +528,10 @@ footer {
   color: var(--cor-destaque);
 }
 .footer-info i {
-  color: var(--cor-destaque);
-  font-size: 1.3rem;
+    color: var(--cor-destaque);
+    font-size: 1.3rem;
+    min-width: 25px; /* Garante que o ícone tenha um espaço reservado */
+    text-align: center;
 }
 .copyright {
   margin-top: 50px;
@@ -682,5 +688,15 @@ footer {
     width: 100%;
     text-align: center;
     padding: 15px 20px;
+  }
+
+  .footer-info p {
+        font-size: 1rem; /* Diminuído levemente para caber melhor em telas pequenas */
+        line-height: 1.4;
+  }
+    
+  .footer-link {
+        justify-content: center;
+        width: 100%; /* Garante que os links fiquem centralizados no toque */
   }
 }
