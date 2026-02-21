@@ -109,4 +109,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // --- 5. Botão "Mostrar Mais" na Galeria ---
+    const btnLoadMore = document.getElementById('btnLoadMore');
+    const galleryWrapper = document.getElementById('galleryWrapper');
+
+    if(btnLoadMore && galleryWrapper) {
+        btnLoadMore.addEventListener('click', () => {
+            // Liga ou desliga a classe que expande a galeria
+            galleryWrapper.classList.toggle('show-all');
+            
+            // Troca o texto e o ícone do botão
+            if(galleryWrapper.classList.contains('show-all')) {
+                btnLoadMore.innerHTML = 'Mostrar Menos <i class="fa-solid fa-chevron-up"></i>';
+            } else {
+                btnLoadMore.innerHTML = 'Mostrar Mais Obras <i class="fa-solid fa-chevron-down"></i>';
+                
+                // Extra: rola a tela de volta pra cima pra pessoa não se perder no site
+                const galeriaSection = document.getElementById('galeria');
+                window.scrollTo({
+                    top: galeriaSection.offsetTop - 80, // Compensa o header
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
 });

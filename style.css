@@ -221,7 +221,7 @@ header.scrolled {
   text-transform: uppercase;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-#hero h2 {
+#hero .hero-subtitle {
   color: rgba(255, 255, 255, 0.95);
   font-size: 1.3rem;
   font-weight: 400;
@@ -360,64 +360,47 @@ header.scrolled {
 }
 
 /* --- Galeria --- */
-#galeria {
-  text-align: center;
-  background-color: var(--cor-branco);
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 20px;
+#galeria { text-align: center; background-color: var(--cor-branco); }
+
+/* Novas regras do Wrapper e do Degradê (Fade) */
+.gallery-wrapper {
+    position: relative;
+    max-height: 650px; /* Mostra aproximadamente 2 linhas no PC (6 imagens) */
+    overflow: hidden;
+    transition: max-height 0.8s ease;
 }
 
-.gallery-item {
-  position: relative;
-  overflow: hidden;
-  height: 300px;
-  border-radius: 8px;
-  cursor: pointer;
+/* Quando o botão for clicado, o JS adiciona essa classe para esticar a galeria */
+.gallery-wrapper.show-all {
+    max-height: 5000px; /* Um limite bem alto para caber todas as 18 fotos */
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+/* O fundo branco esfumaçado na parte de baixo */
+.gallery-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    pointer-events: none; /* Impede que o degradê bloqueie o clique nas fotos */
+    transition: opacity 0.5s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.15);
+/* Apaga o esfumaçado quando a galeria for aberta inteira */
+.gallery-wrapper.show-all .gallery-fade {
+    opacity: 0;
 }
 
-/* Overlay com ícone de lupa */
-.gallery-item .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 36, 99, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.gallery-item .overlay i {
-  color: white;
-  font-size: 2.5rem;
-  transform: scale(0);
-  transition: 0.3s;
-}
-
-.gallery-item:hover .overlay {
-  opacity: 1;
-}
-
-.gallery-item:hover .overlay i {
-  transform: scale(1);
-}
+/* O Resto da Galeria que já existia (Mantenha do jeito que estava) */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+.gallery-item { position: relative; overflow: hidden; height: 300px; border-radius: 8px; cursor: pointer; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.15); }
+.gallery-item .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 36, 99, 0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; }
+.gallery-item .overlay i { color: white; font-size: 2.5rem; transform: scale(0); transition: 0.3s; }
+.gallery-item:hover .overlay { opacity: 1; }
+.gallery-item:hover .overlay i { transform: scale(1); }
 
 /* --- ESTILOS DO MODAL (NOVO) --- */
 .modal {
@@ -692,7 +675,7 @@ footer {
   #hero h1 {
     font-size: 2.2rem;
   }
-  #hero h2 {
+  #hero .hero-subtitle {
     font-size: 1.1rem;
   }
   .btn {
